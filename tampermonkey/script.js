@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 $(document).ready(function() {
-    console.log('nello script', $('body'));
+    // console.log('nello script', $('body'));
     $('body').append('<input type="button" value="Open" id="CP">')
     $("#CP").css("position", "fixed").css("top", 0).css("left", 0).css("z-index", 10000000000);
 

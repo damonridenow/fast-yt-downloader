@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.post('/download', (req, res) => {
     const { exec } = require('child_process');
 
-    const yt = exec('/Users/damon/.nvm/versions/node/v14.16.1/bin/ytdl ' + req.body.url + ' | ffmpeg -i pipe:0 -b:a 320K -vn "/Users/damon/Downloads/' + req.body.nomefile + '.mp3"', function (error, stdout, stderr) {
+    const yt = exec('ytdl ' + req.body.url + ' | ffmpeg -i pipe:0 -b:a 320K -vn "/Users/damon/Downloads/' + req.body.nomefile + '.mp3"', function (error, stdout, stderr) {
         if (error) {
           console.log(error.stack);
           console.log('Error code: '+error.code);
